@@ -1,0 +1,14 @@
+AllCops:
+  TargetRubyVersion: 2.5
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Metrics/LineLength:
+  Max: 90
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Style/HashSyntax:
+  EnforcedStyle: hash_rockets
