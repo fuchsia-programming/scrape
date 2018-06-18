@@ -68,4 +68,5 @@ if results.size > 1
       csv_file << row
     end
   end
+  puts "#{results.size - 1} jobs found"
 end

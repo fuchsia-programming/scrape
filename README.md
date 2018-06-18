@@ -23,4 +23,5 @@ Or to enter interactive mode
 ```
 $ ruby seek.rb 
 Enter keywords: github devops linux
+15 jobs found
 ```
