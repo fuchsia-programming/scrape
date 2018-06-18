@@ -55,7 +55,7 @@ loop do
     results << [title, url, a_name, location]
   end
 
-  if link = page.link_with(:text => 'Next') # As long as there is still a nextpage link...
+  if link = page.link_with(:text => 'Next') # As long as there is still a next page link
     page = link.click
   else # If no link left, then break out of loop
     break
