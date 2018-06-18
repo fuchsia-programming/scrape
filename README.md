@@ -25,3 +25,7 @@ $ ruby seek.rb
 Enter keywords: github devops linux
 15 jobs found
 ```
+
+Code overview of ``seek.rb`` can be seen on the [RubyCritic page](
+http://thebeast.me/scrape/rubycritic/overview.html)
+
