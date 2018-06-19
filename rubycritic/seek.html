@@ -44,7 +44,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2018-06-19 04:17:14 +1000'>2018-06-19 04:17:14 +1000</time>
+          Updated <time class='js-timeago' datetime='2018-06-19 08:16:50 +1000'>2018-06-19 08:16:50 +1000</time>
         
       </span>
     </div>
@@ -65,12 +65,12 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">72</span><small> lines of codes</small></div>
+              <div><span class="metric">82</span><small> lines of codes</small></div>
               <div><span class="metric">1</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">8.0</span><small> complexity/method</small></div>
-              <div><span class="metric">2</span><small> churn</small></div>
+              <div><span class="metric">3</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">8.0</span><small> complexity</small></div>
@@ -104,13 +104,17 @@ require &#39;optparse&#39;
 require &#39;paint&#39;
 
 # implement commandline options
-options = {:keyword =&gt; nil}
+options = {:keyword =&gt; nil, :where =&gt; nil}
 
 parser = OptionParser.new do |opts|
   opts.banner = &quot;Usage: #{Paint[&#39;seek.rb [options]&#39;, :red, :white]}&quot;
 
   opts.on(&#39;-k&#39;, &#39;--keyword keyword&#39;, &#39;Keywords to search&#39;) do |keyword|
     options[:keyword] = keyword
+  end
+
+  opts.on(&#39;-w&#39;, &#39;--where where&#39;, &#39;Suburb, city or region&#39;) do |where|
+    options[:where] = where
   end
 
   opts.on(&#39;-h&#39;, &#39;--help&#39;, &#39;Displays help&#39;) do
@@ -125,6 +129,10 @@ if options[:keyword].nil?
   print &#39;Enter keywords: &#39;
   options[:keyword] = STDIN.gets.chomp
 end
+if options[:where].nil?
+  print &#39;Enter suburb, city or region: &#39;
+  options[:where] = STDIN.gets.chomp
+end
 
 agent = Mechanize.new
 agent.user_agent_alias = &#39;Windows Chrome&#39;
@@ -132,6 +140,7 @@ site = &#39;https://www.seek.com.au&#39;
 page = agent.get site
 form = page.form_with :name =&gt; &#39;SearchBar&#39;
 form.field_with(:name =&gt; &#39;keywords&#39;).value = options[:keyword]
+form.field_with(:name =&gt; &#39;where&#39;).value = options[:where]
 page = agent.submit form
 
 def extract(link, site)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>extract doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
@@ -159,7 +168,8 @@ loop do
 end
 
 if results.size &gt; 1
-  CSV.open(&quot;jobs/#{options[:keyword].tr(&#39; &#39;, &#39;-&#39;)}.csv&quot;, &#39;w+&#39;) do |csv_file|
+  location = options[:where].tr(&#39; &#39;, &#39;-&#39;)
+  CSV.open(&quot;jobs/#{options[:keyword].tr(&#39; &#39;, &#39;-&#39;)}#{&#39;-&#39; + location unless location.empty?}.csv&quot;, &#39;w+&#39;) do |csv_file|
     results.each do |row|
       csv_file &lt;&lt; row
     end

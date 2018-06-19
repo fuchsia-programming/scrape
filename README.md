@@ -17,13 +17,15 @@ Large Australian employment marketplace
 $ ruby seek.rb -h
 Usage: seek.rb [options]
     -k, --keyword keyword            Keywords to search
+    -w, --where where                Suburb, city or region
     -h, --help                       Displays help
 ```
 Or to enter interactive mode
 ```
 $ ruby seek.rb 
 Enter keywords: github devops linux
-15 jobs found
+Enter suburb, city or region: brisbane
+2 jobs found
 ```
 
 Code overview of ``seek.rb`` can be seen on the [RubyCritic page](
