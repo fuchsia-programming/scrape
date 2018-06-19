@@ -31,3 +31,7 @@ Enter suburb, city or region: brisbane
 Code overview of ``seek.rb`` can be seen on the [RubyCritic page](
 http://thebeast.me/scrape/rubycritic/overview.html)
 
+
+<a href="https://info.flagcounter.com/0gCz">
+    <img src="https://s05.flagcounter.com/count2/0gCz/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_250/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter">
+</a>
