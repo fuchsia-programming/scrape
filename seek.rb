@@ -51,7 +51,7 @@ def extract(link, site)
   [link.text.strip, site + link.attributes['href'].value]
 end
 results = []
-results << %w[Title URL Advertiser Location]
+results << ['Title', 'URL', 'Advertiser', 'Location', 'Listing Date', 'Short Description']
 
 loop do
   # for each page # html = page.body
@@ -61,7 +61,10 @@ loop do
     a_name, a_url = extract(job.css('a')[1], site)
     location, l_url = extract(job.css('a')[2], site)
 
-    results << [title, url, a_name, location]
+    listing_date = job.xpath("descendant::span[@data-automation='jobListingDate']/text()")
+    short_description = job.xpath("descendant::span[@data-automation='jobShortDescription']//text()")
+
+    results << [title, url, a_name, location, listing_date, short_description]
   end
 
   if link = page.link_with(:text => 'Next') # As long as there is still a next page link

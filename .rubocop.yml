@@ -5,7 +5,7 @@ Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 
 Metrics/LineLength:
-  Max: 90
+  Max: 120
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
