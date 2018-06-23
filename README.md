@@ -59,7 +59,7 @@ Enter keywords: git python
 Enter suburb, city or region: sydney
 Listed time in days: 30
 Work type: full
-3 jobs found
+41 jobs found
 ```
 
 Code overview of ``seek.rb`` can be seen on the [RubyCritic page](
