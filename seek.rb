@@ -116,11 +116,6 @@ page = agent.get(site, [['keywords', options[:keyword]],
                         ['daterange', options[:daterange]],
                         ['worktype', options[:worktype]]])
 
-# form = page.form_with :name => 'SearchBar'
-# form.field_with(:name => 'keywords').value = options[:keyword]
-# form.field_with(:name => 'where').value = options[:where]
-# page = agent.submit(form)
-
 def extract(link, site)
   [link.text.strip, site + link.attributes['href'].value]
 end

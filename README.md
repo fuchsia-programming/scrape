@@ -1,17 +1,31 @@
 # scrape
 
+### **When you need those jobs fast...._scrape_**
+
 Command line script that builds CSV results of job searches. Check
-out the `jobs` folder some recent scrapes. Uses the power of [Mechanize](
-https://github.com/sparklemotion/mechanize) and [OptionParser](
-https://docs.ruby-lang.org/en/2.5.0/OptionParser.html).
+out the `jobs` folder some recent **_scrape_**_s_. **_scrape_** is built with:
+
+- [Ruby](https://www.ruby-lang.org)
+- [Mechanize](https://github.com/sparklemotion/mechanize)
+- [OptionParser](https://docs.ruby-lang.org/en/2.5.0/OptionParser.html)
+- [Rubocop](https://github.com/rubocop-hq/rubocop)
+- [Paint](https://github.com/janlelis/paint)
+- [RubyCritic](https://github.com/whitesmith/rubycritic)
+- [CSV class](https://ruby-doc.org/stdlib-2.5.0/libdoc/csv/rdoc/CSV.html)
+- [XPath](https://en.wikipedia.org/wiki/XPath)
+- [CSV](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [YAML](http://yaml.org/)
+- [Markdown](https://daringfireball.net/projects/markdown/syntax)
+- [GitHub Pages](https://pages.github.com/)
+- [Flag Counter](https://flagcounter.com)
 
 Hey Wow :) looks like there are still jobs for [Cobol](
 https://en.wikipedia.org/wiki/COBOL)
 
 ### Seek 
 
-[https://www.seek.com.au/](https://www.seek.com.au/): 
 Large Australian employment marketplace
+[https://www.seek.com.au/](https://www.seek.com.au/)  
 
 ```
 $ ruby seek.rb -h

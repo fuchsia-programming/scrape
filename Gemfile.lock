@@ -32,6 +32,7 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     ice_nine (0.11.2)
+    jaro_winkler (1.5.1-x86_64-darwin-17)
     launchy (2.4.3)
       addressable (~> 2.3)
     mechanize (2.7.6)
@@ -54,15 +55,26 @@ GEM
       mini_portile2 (~> 2.3.0)
     ntlm-http (0.1.1)
     paint (2.0.1)
+    parallel (1.12.1)
     parser (2.5.1.0)
       ast (~> 2.4.0)
     path_expander (1.0.3)
+    powerpack (0.1.2)
     public_suffix (3.0.2)
     rainbow (3.0.0)
     reek (4.8.1)
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.5.0.0, < 2.6)
       rainbow (>= 2.0, < 4.0)
+    rubocop (0.57.2)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.5)
+      powerpack (~> 0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.9.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
     rubycritic (3.4.0)
@@ -81,6 +93,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
+    unicode-display_width (1.4.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -95,6 +108,7 @@ DEPENDENCIES
   csv
   mechanize
   paint
+  rubocop
   rubycritic
 
 BUNDLED WITH
