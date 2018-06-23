@@ -14,17 +14,21 @@ https://en.wikipedia.org/wiki/COBOL)
 Large Australian employment marketplace
 
 ```
-$ ruby seek.rb -h
-Usage: seek.rb [options]
-    -k, --keyword keyword            Keywords to search
-    -w, --where where                Suburb, city or region
-    -h, --help                       Displays help
+$ ruby seek.rb --help
+  Usage: seek.rb [options]
+      -k, --keyword keyword            Keywords to search
+      -l, --location location          Suburb, city or region
+      -d, --daterange daterange        Listed time in days
+                                            999 (default) or
+                                            1, 3, 7, 14 or 30
+      -h, --help                       Displays help
 ```
 Or to enter interactive mode
 ```
 $ ruby seek.rb 
 Enter keywords: github devops linux
 Enter suburb, city or region: brisbane
+Listed time in days: 30
 2 jobs found
 ```
 
