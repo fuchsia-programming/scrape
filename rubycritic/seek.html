@@ -44,7 +44,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2018-06-19 08:16:50 +1000'>2018-06-19 08:16:50 +1000</time>
+          Updated <time class='js-timeago' datetime='2018-06-23 23:50:30 +1000'>2018-06-23 23:50:30 +1000</time>
         
       </span>
     </div>
@@ -65,12 +65,12 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">82</span><small> lines of codes</small></div>
+              <div><span class="metric">99</span><small> lines of codes</small></div>
               <div><span class="metric">1</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">8.0</span><small> complexity/method</small></div>
-              <div><span class="metric">3</span><small> churn</small></div>
+              <div><span class="metric">8</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">8.0</span><small> complexity</small></div>
@@ -104,7 +104,7 @@ require &#39;optparse&#39;
 require &#39;paint&#39;
 
 # implement commandline options
-options = {:keyword =&gt; nil, :where =&gt; nil}
+options = {:keyword =&gt; nil, :location =&gt; nil, :daterange =&gt; nil}
 
 parser = OptionParser.new do |opts|
   opts.banner = &quot;Usage: #{Paint[&#39;seek.rb [options]&#39;, :red, :white]}&quot;
@@ -113,8 +113,15 @@ parser = OptionParser.new do |opts|
     options[:keyword] = keyword
   end
 
-  opts.on(&#39;-w&#39;, &#39;--where where&#39;, &#39;Suburb, city or region&#39;) do |where|
-    options[:where] = where
+  opts.on(&#39;-l&#39;, &#39;--location location&#39;, &#39;Suburb, city or region&#39;) do |location|
+    options[:location] = location
+  end
+
+  opts.on(&#39;-d&#39;, &#39;--daterange daterange&#39;, &#39;Listed time in days
+                                          999 (default) or
+                                          1, 3, 7, 14, 30 or
+                                          any positive number&#39;) do |daterange|
+    options[:daterange] = daterange
   end
 
   opts.on(&#39;-h&#39;, &#39;--help&#39;, &#39;Displays help&#39;) do
@@ -129,25 +136,32 @@ if options[:keyword].nil?
   print &#39;Enter keywords: &#39;
   options[:keyword] = STDIN.gets.chomp
 end
-if options[:where].nil?
+if options[:location].nil?
   print &#39;Enter suburb, city or region: &#39;
-  options[:where] = STDIN.gets.chomp
+  options[:location] = STDIN.gets.chomp
+end
+if options[:daterange].nil?
+  print &#39;Listed time in days: &#39;
+  options[:daterange] = STDIN.gets.chomp
 end
 
 agent = Mechanize.new
 agent.user_agent_alias = &#39;Windows Chrome&#39;
-site = &#39;https://www.seek.com.au&#39;
-page = agent.get site
-form = page.form_with :name =&gt; &#39;SearchBar&#39;
-form.field_with(:name =&gt; &#39;keywords&#39;).value = options[:keyword]
-form.field_with(:name =&gt; &#39;where&#39;).value = options[:where]
-page = agent.submit form
+site = &#39;https://www.seek.com.au/jobs&#39;
+page = agent.get(site, [[&#39;keywords&#39;, options[:keyword]],
+                        [&#39;where&#39;, options[:location]],
+                        [&#39;daterange&#39;, options[:daterange]]])
+
+# form = page.form_with :name =&gt; &#39;SearchBar&#39;
+# form.field_with(:name =&gt; &#39;keywords&#39;).value = options[:keyword]
+# form.field_with(:name =&gt; &#39;where&#39;).value = options[:where]
+# page = agent.submit(form)
 
 def extract(link, site)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>extract doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
   [link.text.strip, site + link.attributes[&#39;href&#39;].value]
 end
 results = []
-results &lt;&lt; %w[Title URL Advertiser Location]
+results &lt;&lt; [&#39;Title&#39;, &#39;URL&#39;, &#39;Advertiser&#39;, &#39;Location&#39;, &#39;Listing Date&#39;, &#39;Short Description&#39;]
 
 loop do
   # for each page # html = page.body
@@ -157,7 +171,10 @@ loop do
     a_name, a_url = extract(job.css(&#39;a&#39;)[1], site)
     location, l_url = extract(job.css(&#39;a&#39;)[2], site)
 
-    results &lt;&lt; [title, url, a_name, location]
+    listing_date = job.xpath(&quot;descendant::span[@data-automation=&#39;jobListingDate&#39;]/text()&quot;)
+    short_description = job.xpath(&quot;descendant::span[@data-automation=&#39;jobShortDescription&#39;]//text()&quot;)
+
+    results &lt;&lt; [title, url, a_name, location, listing_date, short_description]
   end
 
   if link = page.link_with(:text =&gt; &#39;Next&#39;) # As long as there is still a next page link
@@ -168,8 +185,8 @@ loop do
 end
 
 if results.size &gt; 1
-  location = options[:where].tr(&#39; &#39;, &#39;-&#39;)
-  CSV.open(&quot;jobs/#{options[:keyword].tr(&#39; &#39;, &#39;-&#39;)}#{&#39;-&#39; + location unless location.empty?}.csv&quot;, &#39;w+&#39;) do |csv_file|
+  location = options[:location].tr(&#39; &#39;, &#39;-&#39;)
+  CSV.open(&quot;jobs/#{options[:keyword].tr(&#39; &#39;, &#39;-&#39;)}#{&#39;-&#39; + location unless location.empty?}#{&#39;-daterange-&#39; + options[:daterange] unless options[:daterange].empty?}.csv&quot;, &#39;w+&#39;) do |csv_file|
     results.each do |row|
       csv_file &lt;&lt; row
     end
