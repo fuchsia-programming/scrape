@@ -14,14 +14,15 @@ https://en.wikipedia.org/wiki/COBOL)
 Large Australian employment marketplace
 
 ```
-$ ruby seek.rb --help
-  Usage: seek.rb [options]
-      -k, --keyword keyword            Keywords to search
-      -l, --location location          Suburb, city or region
-      -d, --daterange daterange        Listed time in days
-                                            999 (default) or
-                                            1, 3, 7, 14 or 30
-      -h, --help                       Displays help
+$ ruby seek.rb -h
+Usage: seek.rb [options]
+    -k, --keyword keyword            Keywords to search
+    -l, --location location          Suburb, city or region
+    -d, --daterange daterange        Listed time in days
+                                          999 (default) or
+                                          1, 3, 7, 14, 30 or
+                                          any positive number
+    -h, --help                       Displays help
 ```
 Or to enter interactive mode
 ```

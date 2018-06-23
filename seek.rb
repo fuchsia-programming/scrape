@@ -23,7 +23,8 @@ parser = OptionParser.new do |opts|
 
   opts.on('-d', '--daterange daterange', 'Listed time in days
                                           999 (default) or
-                                          1, 3, 7, 14 or 30') do |daterange|
+                                          1, 3, 7, 14, 30 or
+                                          any positive number') do |daterange|
     options[:daterange] = daterange
   end
 
