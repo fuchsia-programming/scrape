@@ -20,17 +20,26 @@ Usage: seek.rb [options]
     -l, --location location          Suburb, city or region
     -d, --daterange daterange        Listed time in days
                                           999 (default) or
-                                          1, 3, 7, 14, 30 or
+                                          1, 3, 7, 14, 31 or
                                           any positive number
+    -w, --worktype worktype          Work type
+                                        all (default)
+                                        full or 242 (full time)
+                                        part or 243 (part time)
+                                        contract or 244 (contract/temp)
+                                        casual or 245 (casual/vacation)
     -h, --help                       Displays help
+        --version                    Show version
+
 ```
 Or to enter interactive mode
 ```
 $ ruby seek.rb 
-Enter keywords: github devops linux
-Enter suburb, city or region: brisbane
+Enter keywords: git python
+Enter suburb, city or region: sydney
 Listed time in days: 30
-2 jobs found
+Work type: full
+3 jobs found
 ```
 
 Code overview of ``seek.rb`` can be seen on the [RubyCritic page](
