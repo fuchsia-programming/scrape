@@ -19,10 +19,10 @@ out the `jobs` folder some recent **_scrape_**_s_. **_scrape_** is built with:
 - [GitHub Pages](https://pages.github.com/)
 - [Flag Counter](https://flagcounter.com)
 
-Hey Wow :) looks like there are still jobs for [Cobol](
+Hey Wow :) looks like there are still [jobs](https://github.com/jbampton/scrape/blob/master/jobs/cobol-worktype-all.csv) for [Cobol](
 https://en.wikipedia.org/wiki/COBOL)
 
-### Seek 
+## Seek 
 
 Large Australian employment marketplace
 [https://www.seek.com.au/](https://www.seek.com.au/)  
