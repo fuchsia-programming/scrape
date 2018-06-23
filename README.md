@@ -3,7 +3,10 @@
 ### **When you need those jobs fast...._scrape_**
 
 Command line script that builds CSV results of job searches. Check
-out the `jobs` folder some recent **_scrape_**_s_. **_scrape_** is built with:
+out the [`jobs`](https://github.com/jbampton/scrape/tree/master/jobs)
+folder some recent **_scrape_**_s_. 
+
+**_scrape_** is built with:
 
 - [Ruby](https://www.ruby-lang.org)
 - [Mechanize](https://github.com/sparklemotion/mechanize)
@@ -18,6 +21,9 @@ out the `jobs` folder some recent **_scrape_**_s_. **_scrape_** is built with:
 - [Markdown](https://daringfireball.net/projects/markdown/syntax)
 - [GitHub Pages](https://pages.github.com/)
 - [Flag Counter](https://flagcounter.com)
+- [GitHub Desktop](https://desktop.github.com/)
+- [RubyMine](https://www.jetbrains.com/ruby/)
+- [Terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator)
 
 Hey Wow :) looks like there are still [jobs](https://github.com/jbampton/scrape/blob/master/jobs/cobol-worktype-all.csv) for [Cobol](
 https://en.wikipedia.org/wiki/COBOL)
@@ -59,6 +65,26 @@ Work type: full
 Code overview of ``seek.rb`` can be seen on the [RubyCritic page](
 http://thebeast.me/scrape/rubycritic/overview.html)
 
+
+## Tools
+
+#### RubyCritic
+
+RubyCritic is a Ruby gem that produces a web based report of the ruby
+code in the project and is seen running below
+
+```
+$ rubycritic -p rubycritic/
+```
+
+#### Rubocop
+
+Rubocop is a Ruby gem that is used to lint the projects Ruby code and
+outputs a report in the terminal.
+
+```
+$ rubocop
+```
 
 <a href="https://info.flagcounter.com/0gCz">
     <img src="https://s05.flagcounter.com/count2/0gCz/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_250/viewers_0/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter">

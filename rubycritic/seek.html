@@ -44,7 +44,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2018-06-23 23:50:30 +1000'>2018-06-23 23:50:30 +1000</time>
+          Updated <time class='js-timeago' datetime='2018-06-24 06:02:28 +1000'>2018-06-24 06:02:28 +1000</time>
         
       </span>
     </div>
@@ -65,15 +65,15 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">99</span><small> lines of codes</small></div>
-              <div><span class="metric">1</span><small> methods</small></div>
+              <div><span class="metric">161</span><small> lines of codes</small></div>
+              <div><span class="metric">3</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">8.0</span><small> complexity/method</small></div>
-              <div><span class="metric">8</span><small> churn</small></div>
+              <div><span class="metric">8.4</span><small> complexity/method</small></div>
+              <div><span class="metric">10</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">8.0</span><small> complexity</small></div>
+              <div><span class="metric">25.05</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -85,8 +85,8 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                1
-                smell
+                5
+                smells
               </a>
             </li>
           </ul>
@@ -103,8 +103,48 @@ require &#39;mechanize&#39;
 require &#39;optparse&#39;
 require &#39;paint&#39;
 
+VERSION = &#39;1.0.0&#39;.freeze
+
+def wtype(worktype)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>wtype has approx 9 statements</span>          </div>  </li></ol>
+  case worktype<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Control-Parameter.md" target="_blank"><b>ControlParameter</b></a>        </span>      </div>      <span>wtype is controlled by argument 'worktype'</span>          </div>  </li></ol>
+  when &#39;full&#39;
+    242
+  when &#39;part&#39;
+    243
+  when &#39;contract&#39;
+    244
+  when &#39;casual&#39;
+    245
+  when &#39;242&#39;
+    242
+  when &#39;243&#39;
+    243
+  when &#39;244&#39;
+    244
+  when &#39;245&#39;
+    245
+  else
+    &#39;242%2C243%2C244%2C245&#39;
+  end
+end
+
+def enwtype(i)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Parameter-Name.md" target="_blank"><b>UncommunicativeParameterName</b></a>        </span>      </div>      <span>enwtype has the parameter name 'i'</span>          </div>  </li></ol>
+  case i<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Control-Parameter.md" target="_blank"><b>ControlParameter</b></a>        </span>      </div>      <span>enwtype is controlled by argument 'i'</span>          </div>  </li></ol>
+  when 242
+    &#39;full&#39;
+  when 243
+    &#39;part&#39;
+  when 244
+    &#39;contract&#39;
+  when 245
+    &#39;casual&#39;
+  else
+    &#39;all&#39;
+  end
+end
+
 # implement commandline options
-options = {:keyword =&gt; nil, :location =&gt; nil, :daterange =&gt; nil}
+options = {:keyword =&gt; nil, :location =&gt; nil, :daterange =&gt; nil, :worktype =&gt; nil}
 
 parser = OptionParser.new do |opts|
   opts.banner = &quot;Usage: #{Paint[&#39;seek.rb [options]&#39;, :red, :white]}&quot;
@@ -119,13 +159,28 @@ parser = OptionParser.new do |opts|
 
   opts.on(&#39;-d&#39;, &#39;--daterange daterange&#39;, &#39;Listed time in days
                                           999 (default) or
-                                          1, 3, 7, 14, 30 or
+                                          1, 3, 7, 14, 31 or
                                           any positive number&#39;) do |daterange|
     options[:daterange] = daterange
   end
 
+  opts.on(&#39;-w&#39;, &#39;--worktype worktype&#39;, &#39;Work type
+                                        all (default)
+                                        full or 242 (full time)
+                                        part or 243 (part time)
+                                        contract or 244 (contract/temp)
+                                        casual or 245 (casual/vacation)&#39;) do |worktype|
+    worktype = wtype(worktype)
+    options[:worktype] = worktype
+  end
+
   opts.on(&#39;-h&#39;, &#39;--help&#39;, &#39;Displays help&#39;) do
     puts opts
+    exit
+  end
+
+  opts.on_tail(&#39;--version&#39;, &#39;Show version&#39;) do
+    puts VERSION
     exit
   end
 end
@@ -144,18 +199,18 @@ if options[:daterange].nil?
   print &#39;Listed time in days: &#39;
   options[:daterange] = STDIN.gets.chomp
 end
+if options[:worktype].nil?
+  print &#39;Work type: &#39;
+  options[:worktype] = wtype(STDIN.gets.chomp)
+end
 
 agent = Mechanize.new
 agent.user_agent_alias = &#39;Windows Chrome&#39;
 site = &#39;https://www.seek.com.au/jobs&#39;
-page = agent.get(site, [[&#39;keywords&#39;, options[:keyword]],
+page = agent.get(site, [[&#39;keywords&#39;, options[:keyword].strip.split(&#39; &#39;).join(&#39; and &#39;)],
                         [&#39;where&#39;, options[:location]],
-                        [&#39;daterange&#39;, options[:daterange]]])
-
-# form = page.form_with :name =&gt; &#39;SearchBar&#39;
-# form.field_with(:name =&gt; &#39;keywords&#39;).value = options[:keyword]
-# form.field_with(:name =&gt; &#39;where&#39;).value = options[:where]
-# page = agent.submit(form)
+                        [&#39;daterange&#39;, options[:daterange]],
+                        [&#39;worktype&#39;, options[:worktype]]])
 
 def extract(link, site)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>extract doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
   [link.text.strip, site + link.attributes[&#39;href&#39;].value]
@@ -185,13 +240,20 @@ loop do
 end
 
 if results.size &gt; 1
-  location = options[:location].tr(&#39; &#39;, &#39;-&#39;)
-  CSV.open(&quot;jobs/#{options[:keyword].tr(&#39; &#39;, &#39;-&#39;)}#{&#39;-&#39; + location unless location.empty?}#{&#39;-daterange-&#39; + options[:daterange] unless options[:daterange].empty?}.csv&quot;, &#39;w+&#39;) do |csv_file|
+  keyword = options[:keyword].tr(&#39; &#39;, &#39;-&#39;).downcase
+  location = &#39;-&#39; + options[:location].tr(&#39; &#39;, &#39;-&#39;).downcase unless options[:location].empty?
+  daterange = &#39;-daterange-&#39; + options[:daterange] unless options[:daterange].empty?
+  options[:worktype] = enwtype(options[:worktype])
+  worktype = &#39;-worktype-&#39; + options[:worktype].downcase unless options[:worktype].empty?
+  filename = &quot;#{keyword}#{location}#{daterange}#{worktype}&quot;
+  filename = filename[1..-1] if filename[0] == &#39;-&#39;
+  CSV.open(&quot;jobs/#{filename}.csv&quot;, &#39;w+&#39;) do |csv_file|
     results.each do |row|
       csv_file &lt;&lt; row
     end
   end
   puts &quot;#{results.size - 1} jobs found&quot;
+  `open &quot;jobs/#{filename}.csv&quot;`
 end
 </code>
   </div>

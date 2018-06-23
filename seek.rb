@@ -111,7 +111,7 @@ end
 agent = Mechanize.new
 agent.user_agent_alias = 'Windows Chrome'
 site = 'https://www.seek.com.au/jobs'
-page = agent.get(site, [['keywords', options[:keyword]],
+page = agent.get(site, [['keywords', options[:keyword].strip.split(' ').join(' and ')],
                         ['where', options[:location]],
                         ['daterange', options[:daterange]],
                         ['worktype', options[:worktype]]])
@@ -157,4 +157,5 @@ if results.size > 1
     end
   end
   puts "#{results.size - 1} jobs found"
+  `open "jobs/#{filename}.csv"`
 end
