@@ -53,7 +53,9 @@ options = {:keyword => nil, :location => nil, :daterange => nil, :worktype => ni
 parser = OptionParser.new do |opts|
   opts.banner = "Usage: #{Paint['seek.rb [options]', :red, :white]}"
 
-  opts.on('-k', '--keyword keyword', 'Keywords to search') do |keyword|
+  opts.on('-k', '--keyword keyword', 'Keywords to search
+                                        separators include:
+                                        and, or, not') do |keyword|
     options[:keyword] = keyword
   end
 
@@ -62,9 +64,9 @@ parser = OptionParser.new do |opts|
   end
 
   opts.on('-d', '--daterange daterange', 'Listed time in days
-                                          999 (default) or
-                                          1, 3, 7, 14, 31 or
-                                          any positive number') do |daterange|
+                                        999 (default) or
+                                        1, 3, 7, 14, 31 or
+                                        any positive number') do |daterange|
     options[:daterange] = daterange
   end
 
@@ -111,7 +113,7 @@ end
 agent = Mechanize.new
 agent.user_agent_alias = 'Windows Chrome'
 site = 'https://www.seek.com.au/jobs'
-page = agent.get(site, [['keywords', options[:keyword].strip.split(' ').join(' and ')],
+page = agent.get(site, [['keywords', options[:keyword]],
                         ['where', options[:location]],
                         ['daterange', options[:daterange]],
                         ['worktype', options[:worktype]]])

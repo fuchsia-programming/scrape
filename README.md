@@ -37,11 +37,13 @@ Large Australian employment marketplace
 $ ruby seek.rb -h
 Usage: seek.rb [options]
     -k, --keyword keyword            Keywords to search
+                                        separators include:
+                                        and, or, not
     -l, --location location          Suburb, city or region
     -d, --daterange daterange        Listed time in days
-                                          999 (default) or
-                                          1, 3, 7, 14, 31 or
-                                          any positive number
+                                        999 (default) or
+                                        1, 3, 7, 14, 31 or
+                                        any positive number
     -w, --worktype worktype          Work type
                                         all (default)
                                         full or 242 (full time)
@@ -50,12 +52,11 @@ Usage: seek.rb [options]
                                         casual or 245 (casual/vacation)
     -h, --help                       Displays help
         --version                    Show version
-
 ```
 Or to enter interactive mode
 ```
 $ ruby seek.rb 
-Enter keywords: git python
+Enter keywords: git and python
 Enter suburb, city or region: sydney
 Listed time in days: 30
 Work type: full

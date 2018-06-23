@@ -5,7 +5,7 @@ Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 
 Metrics/BlockLength:
-  Max: 30
+  Max: 32
 
 Metrics/CyclomaticComplexity:
   Max: 9

@@ -44,7 +44,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2018-06-24 06:02:28 +1000'>2018-06-24 06:02:28 +1000</time>
+          Updated <time class='js-timeago' datetime='2018-06-24 08:22:27 +1000'>2018-06-24 08:22:27 +1000</time>
         
       </span>
     </div>
@@ -65,12 +65,12 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">161</span><small> lines of codes</small></div>
+              <div><span class="metric">163</span><small> lines of codes</small></div>
               <div><span class="metric">3</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">8.4</span><small> complexity/method</small></div>
-              <div><span class="metric">10</span><small> churn</small></div>
+              <div><span class="metric">11</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">25.05</span><small> complexity</small></div>
@@ -149,7 +149,9 @@ options = {:keyword =&gt; nil, :location =&gt; nil, :daterange =&gt; nil, :workt
 parser = OptionParser.new do |opts|
   opts.banner = &quot;Usage: #{Paint[&#39;seek.rb [options]&#39;, :red, :white]}&quot;
 
-  opts.on(&#39;-k&#39;, &#39;--keyword keyword&#39;, &#39;Keywords to search&#39;) do |keyword|
+  opts.on(&#39;-k&#39;, &#39;--keyword keyword&#39;, &#39;Keywords to search
+                                        separators include:
+                                        and, or, not&#39;) do |keyword|
     options[:keyword] = keyword
   end
 
@@ -158,9 +160,9 @@ parser = OptionParser.new do |opts|
   end
 
   opts.on(&#39;-d&#39;, &#39;--daterange daterange&#39;, &#39;Listed time in days
-                                          999 (default) or
-                                          1, 3, 7, 14, 31 or
-                                          any positive number&#39;) do |daterange|
+                                        999 (default) or
+                                        1, 3, 7, 14, 31 or
+                                        any positive number&#39;) do |daterange|
     options[:daterange] = daterange
   end
 
@@ -207,7 +209,7 @@ end
 agent = Mechanize.new
 agent.user_agent_alias = &#39;Windows Chrome&#39;
 site = &#39;https://www.seek.com.au/jobs&#39;
-page = agent.get(site, [[&#39;keywords&#39;, options[:keyword].strip.split(&#39; &#39;).join(&#39; and &#39;)],
+page = agent.get(site, [[&#39;keywords&#39;, options[:keyword]],
                         [&#39;where&#39;, options[:location]],
                         [&#39;daterange&#39;, options[:daterange]],
                         [&#39;worktype&#39;, options[:worktype]]])
