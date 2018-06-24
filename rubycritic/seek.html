@@ -44,7 +44,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2018-06-24 08:22:27 +1000'>2018-06-24 08:22:27 +1000</time>
+          Updated <time class='js-timeago' datetime='2018-06-24 09:08:48 +1000'>2018-06-24 09:08:48 +1000</time>
         
       </span>
     </div>
@@ -59,8 +59,8 @@
       <div class="col-md-8">
         <div class="row">
           <div class="col-md-1">
-            <div class="rating a big">
-              A
+            <div class="rating f big">
+              F
             </div>
           </div>
           <div class="code-statistics col-md-11">
@@ -70,11 +70,11 @@
             </div>
             <div class="col-md-3">
               <div><span class="metric">8.4</span><small> complexity/method</small></div>
-              <div><span class="metric">11</span><small> churn</small></div>
+              <div><span class="metric">12</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">25.05</span><small> complexity</small></div>
-              <div><span class="metric">0</span><small> duplications</small></div>
+              <div><span class="metric">348</span><small> duplications</small></div>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                5
+                11
                 smells
               </a>
             </li>
@@ -105,7 +105,7 @@ require &#39;paint&#39;
 
 VERSION = &#39;1.0.0&#39;.freeze
 
-def wtype(worktype)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>wtype has approx 9 statements</span>          </div>  </li></ol>
+def wtype(worktype)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L12" class="js-smell-location">0</a>                  <a href="seek.html#L12" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>wtype has approx 9 statements</span>          </div>  </li></ol>
   case worktype<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Control-Parameter.md" target="_blank"><b>ControlParameter</b></a>        </span>      </div>      <span>wtype is controlled by argument 'worktype'</span>          </div>  </li></ol>
   when &#39;full&#39;
     242
@@ -128,7 +128,7 @@ def wtype(worktype)<ol class="nocode errors smells">  <li>    <div class="descri
   end
 end
 
-def enwtype(i)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Parameter-Name.md" target="_blank"><b>UncommunicativeParameterName</b></a>        </span>      </div>      <span>enwtype has the parameter name 'i'</span>          </div>  </li></ol>
+def enwtype(i)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L35" class="js-smell-location">0</a>                  <a href="seek.html#L35" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Parameter-Name.md" target="_blank"><b>UncommunicativeParameterName</b></a>        </span>      </div>      <span>enwtype has the parameter name 'i'</span>          </div>  </li></ol>
   case i<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Control-Parameter.md" target="_blank"><b>ControlParameter</b></a>        </span>      </div>      <span>enwtype is controlled by argument 'i'</span>          </div>  </li></ol>
   when 242
     &#39;full&#39;
@@ -146,7 +146,7 @@ end
 # implement commandline options
 options = {:keyword =&gt; nil, :location =&gt; nil, :daterange =&gt; nil, :worktype =&gt; nil}
 
-parser = OptionParser.new do |opts|
+parser = OptionParser.new do |opts|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L53" class="js-smell-location">0</a>                  <a href="seek.html#L53" class="js-smell-location">1</a>                  </div>  </li></ol>
   opts.banner = &quot;Usage: #{Paint[&#39;seek.rb [options]&#39;, :red, :white]}&quot;
 
   opts.on(&#39;-k&#39;, &#39;--keyword keyword&#39;, &#39;Keywords to search
@@ -209,7 +209,7 @@ end
 agent = Mechanize.new
 agent.user_agent_alias = &#39;Windows Chrome&#39;
 site = &#39;https://www.seek.com.au/jobs&#39;
-page = agent.get(site, [[&#39;keywords&#39;, options[:keyword]],
+page = agent.get(site, [[&#39;keywords&#39;, options[:keyword]],<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L116" class="js-smell-location">0</a>                  <a href="seek.html#L116" class="js-smell-location">1</a>                  </div>  </li></ol>
                         [&#39;where&#39;, options[:location]],
                         [&#39;daterange&#39;, options[:daterange]],
                         [&#39;worktype&#39;, options[:worktype]]])
@@ -220,7 +220,7 @@ end
 results = []
 results &lt;&lt; [&#39;Title&#39;, &#39;URL&#39;, &#39;Advertiser&#39;, &#39;Location&#39;, &#39;Listing Date&#39;, &#39;Short Description&#39;]
 
-loop do
+loop do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L127" class="js-smell-location">0</a>                  <a href="seek.html#L127" class="js-smell-location">1</a>                  </div>  </li></ol>
   # for each page # html = page.body
   jobs = page.search(&#39;article&#39;)
   jobs.each do |job|
@@ -241,7 +241,7 @@ loop do
   end
 end
 
-if results.size &gt; 1
+if results.size &gt; 1<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L148" class="js-smell-location">0</a>                  <a href="seek.html#L148" class="js-smell-location">1</a>                  </div>  </li></ol>
   keyword = options[:keyword].tr(&#39; &#39;, &#39;-&#39;).downcase
   location = &#39;-&#39; + options[:location].tr(&#39; &#39;, &#39;-&#39;).downcase unless options[:location].empty?
   daterange = &#39;-daterange-&#39; + options[:daterange] unless options[:daterange].empty?

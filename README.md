@@ -1,6 +1,6 @@
-# _scrape_
+# **_scrape_**
 
-### **When you need those jobs hypersonic...._scrape_**
+## **When you need those jobs hypersonic...._scrape_**
 
 **_scrape_** is a command line script that builds :wrench::nut_and_bolt::hammer: 
 CSV results of job searches. Check out the [jobs](
@@ -15,16 +15,21 @@ folder some recent **_scrape_**_s_.
 - [Rubocop](https://github.com/rubocop-hq/rubocop)
 - [Paint](https://github.com/janlelis/paint)
 - [RubyCritic](https://github.com/whitesmith/rubycritic)
+- [Bundler](https://bundler.io/)
 - [CSV class](https://ruby-doc.org/stdlib-2.5.0/libdoc/csv/rdoc/CSV.html)
 - [XPath](https://en.wikipedia.org/wiki/XPath)
 - [CSV](https://en.wikipedia.org/wiki/Comma-separated_values)
 - [YAML](http://yaml.org/)
 - [Markdown](https://daringfireball.net/projects/markdown/syntax)
 - [GitHub Pages](https://pages.github.com/)
+- [Jekyll](https://jekyllrb.com/)
 - [Flag Counter](https://flagcounter.com)
 - [GitHub Desktop](https://desktop.github.com/)
 - [RubyMine](https://www.jetbrains.com/ruby/)
 - [Terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator)
+- [Jemoji](https://github.com/jekyll/jemoji)
+- [The Cayman theme](https://github.com/pages-themes/cayman)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 Hey Wow :) looks like there are still [jobs](https://github.com/jbampton/scrape/blob/master/jobs/cobol-worktype-all.csv) for [Cobol](
 https://en.wikipedia.org/wiki/COBOL)
