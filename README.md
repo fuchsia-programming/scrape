@@ -2,8 +2,8 @@
 
 ### **When you need those jobs fast...._scrape_**
 
-Command line script that builds CSV results of job searches. Check
-out the [`jobs`](https://github.com/jbampton/scrape/tree/master/jobs)
+**_scrape_** is a command line script that builds CSV results of job searches. Check
+out the [jobs](https://github.com/jbampton/scrape/tree/master/jobs)
 folder some recent **_scrape_**_s_. 
 
 **_scrape_** is built with:
@@ -63,8 +63,10 @@ Work type: full
 41 jobs found
 ```
 
-Code overview of ``seek.rb`` can be seen on the [RubyCritic page](
-http://thebeast.me/scrape/rubycritic/overview.html)
+Code overview of [seek.rb](
+https://github.com/jbampton/scrape/blob/master/seek.rb) 
+can be seen on the [RubyCritic page](
+http://thebeast.me/scrape/rubycritic/overview.html).
 
 
 ## Tools
