@@ -146,12 +146,12 @@ loop do
 end
 
 if results.size > 1
-  keyword = options[:keyword].tr(' ', '-').downcase
-  location = '-' + options[:location].tr(' ', '-').downcase unless options[:location].empty?
-  daterange = '-daterange-' + options[:daterange] unless options[:daterange].empty?
+  keyword = options[:keyword].tr(' ', '-')
+  location = options[:location].tr(' ', '-') unless options[:location].empty?
+  daterange = 'daterange-' + options[:daterange] unless options[:daterange].empty?
   options[:worktype] = enwtype(options[:worktype])
-  worktype = '-worktype-' + options[:worktype].downcase unless options[:worktype].empty?
-  filename = "#{keyword}#{location}#{daterange}#{worktype}"
+  worktype = 'worktype-' + options[:worktype] unless options[:worktype].empty?
+  filename = [keyword, location, daterange, worktype].compact.join('-').downcase
   filename = filename[1..-1] if filename[0] == '-'
   CSV.open("jobs/#{filename}.csv", 'w+') do |csv_file|
     results.each do |row|
