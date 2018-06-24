@@ -1,4 +1,6 @@
-# **_scrape_**
+ # **_scrape_**
+   
+<img src="assets/images/logo.png" align="right">
 
 ## **When you need those jobs hypersonic...._scrape_**
 
