@@ -32,6 +32,7 @@ folder for some recent **_scrape_**_s_.
 - [Jemoji](https://github.com/jekyll/jemoji)
 - [The Cayman theme](https://github.com/pages-themes/cayman)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics)
 
 Hey Wow :) looks like there are still [jobs](https://github.com/jbampton/scrape/blob/master/jobs/cobol-worktype-all.csv) for [Cobol](
 https://en.wikipedia.org/wiki/COBOL)
