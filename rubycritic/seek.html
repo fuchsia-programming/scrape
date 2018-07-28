@@ -44,7 +44,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2018-06-24 09:08:48 +1000'>2018-06-24 09:08:48 +1000</time>
+          Updated <time class='js-timeago' datetime='2018-06-25 07:45:04 +1000'>2018-06-25 07:45:04 +1000</time>
         
       </span>
     </div>
@@ -66,15 +66,15 @@
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
               <div><span class="metric">163</span><small> lines of codes</small></div>
-              <div><span class="metric">3</span><small> methods</small></div>
+              <div><span class="metric">2</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">8.4</span><small> complexity/method</small></div>
-              <div><span class="metric">12</span><small> churn</small></div>
+              <div><span class="metric">8.5</span><small> complexity/method</small></div>
+              <div><span class="metric">13</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">25.05</span><small> complexity</small></div>
-              <div><span class="metric">348</span><small> duplications</small></div>
+              <div><span class="metric">17.05</span><small> complexity</small></div>
+              <div><span class="metric">333</span><small> duplications</small></div>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                11
+                10
                 smells
               </a>
             </li>
@@ -208,30 +208,30 @@ end
 
 agent = Mechanize.new
 agent.user_agent_alias = &#39;Windows Chrome&#39;
-site = &#39;https://www.seek.com.au/jobs&#39;
-page = agent.get(site, [[&#39;keywords&#39;, options[:keyword]],<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L116" class="js-smell-location">0</a>                  <a href="seek.html#L116" class="js-smell-location">1</a>                  </div>  </li></ol>
-                        [&#39;where&#39;, options[:location]],
-                        [&#39;daterange&#39;, options[:daterange]],
-                        [&#39;worktype&#39;, options[:worktype]]])
-
-def extract(link, site)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Utility-Function.md" target="_blank"><b>UtilityFunction</b></a>        </span>      </div>      <span>extract doesn't depend on instance state (maybe move it to another class?)</span>          </div>  </li></ol>
-  [link.text.strip, site + link.attributes[&#39;href&#39;].value]
-end
+site = &#39;https://www.seek.com.au&#39;
+page = agent.get(site + &#39;/jobs&#39;, [[&#39;keywords&#39;, options[:keyword]],<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L116" class="js-smell-location">0</a>                  <a href="seek.html#L116" class="js-smell-location">1</a>                  </div>  </li></ol>
+                                  [&#39;where&#39;, options[:location]],
+                                  [&#39;daterange&#39;, options[:daterange]],
+                                  [&#39;worktype&#39;, options[:worktype]]])
 results = []
-results &lt;&lt; [&#39;Title&#39;, &#39;URL&#39;, &#39;Advertiser&#39;, &#39;Location&#39;, &#39;Listing Date&#39;, &#39;Short Description&#39;]
+results &lt;&lt; [&#39;Title&#39;, &#39;URL&#39;, &#39;Advertiser&#39;, &#39;Location&#39;, &#39;Area&#39;, &#39;Listing Date&#39;, &#39;Short Description&#39;]
 
-loop do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L127" class="js-smell-location">0</a>                  <a href="seek.html#L127" class="js-smell-location">1</a>                  </div>  </li></ol>
+loop do<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L123" class="js-smell-location">0</a>                  <a href="seek.html#L123" class="js-smell-location">1</a>                  </div>  </li></ol>
   # for each page # html = page.body
   jobs = page.search(&#39;article&#39;)
   jobs.each do |job|
-    title, url = extract(job.css(&#39;a&#39;)[0], site)
-    a_name, a_url = extract(job.css(&#39;a&#39;)[1], site)
-    location, l_url = extract(job.css(&#39;a&#39;)[2], site)
-
+    title = job.xpath(&quot;descendant::a[@data-automation=&#39;jobTitle&#39;]/text()&quot;)
+    url = site + job.xpath(&quot;descendant::a[@data-automation=&#39;jobTitle&#39;]/@href&quot;).to_s
+    advertiser = job.xpath(&quot;descendant::a[@data-automation=&#39;jobCompany&#39;]/text()&quot;)
+    location = job.xpath(&quot;descendant::a[@data-automation=&#39;jobLocation&#39;]/text()&quot;)
+    area = job.xpath(&quot;descendant::a[@data-automation=&#39;jobArea&#39;]/text()&quot;)
     listing_date = job.xpath(&quot;descendant::span[@data-automation=&#39;jobListingDate&#39;]/text()&quot;)
     short_description = job.xpath(&quot;descendant::span[@data-automation=&#39;jobShortDescription&#39;]//text()&quot;)
 
-    results &lt;&lt; [title, url, a_name, location, listing_date, short_description]
+    # get full job description from job ad page
+    # job_description = agent.get(url).xpath(&quot;//descendant::div[@data-automation=&#39;jobDescription&#39;]//text()&quot;)
+
+    results &lt;&lt; [title, url, advertiser, location, area, listing_date, short_description]
   end
 
   if link = page.link_with(:text =&gt; &#39;Next&#39;) # As long as there is still a next page link
@@ -242,12 +242,12 @@ loop do<ol class="nocode errors smells">  <li>    <div class="description">     
 end
 
 if results.size &gt; 1<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L148" class="js-smell-location">0</a>                  <a href="seek.html#L148" class="js-smell-location">1</a>                  </div>  </li></ol>
-  keyword = options[:keyword].tr(&#39; &#39;, &#39;-&#39;).downcase
-  location = &#39;-&#39; + options[:location].tr(&#39; &#39;, &#39;-&#39;).downcase unless options[:location].empty?
-  daterange = &#39;-daterange-&#39; + options[:daterange] unless options[:daterange].empty?
+  keyword = options[:keyword].tr(&#39; &#39;, &#39;-&#39;)
+  location = options[:location].tr(&#39; &#39;, &#39;-&#39;) unless options[:location].empty?
+  daterange = &#39;daterange-&#39; + options[:daterange] unless options[:daterange].empty?
   options[:worktype] = enwtype(options[:worktype])
-  worktype = &#39;-worktype-&#39; + options[:worktype].downcase unless options[:worktype].empty?
-  filename = &quot;#{keyword}#{location}#{daterange}#{worktype}&quot;
+  worktype = &#39;worktype-&#39; + options[:worktype] unless options[:worktype].empty?
+  filename = [keyword, location, daterange, worktype].compact.join(&#39;-&#39;).downcase
   filename = filename[1..-1] if filename[0] == &#39;-&#39;
   CSV.open(&quot;jobs/#{filename}.csv&quot;, &#39;w+&#39;) do |csv_file|
     results.each do |row|
