@@ -9,29 +9,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- StyleSheets -->
-    <link href="assets/stylesheets/bootstrap.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="assets/stylesheets/font-awesome.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="assets/stylesheets/prettify.custom_theme.css" media="screen, projection, print" rel="stylesheet" type="text/css">
-    <link href="assets/stylesheets/application.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../assets/stylesheets/bootstrap.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../assets/stylesheets/font-awesome.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../assets/stylesheets/prettify.custom_theme.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../assets/stylesheets/application.css" media="screen, projection, print" rel="stylesheet" type="text/css">
   </head>
 
   <body>
     <header class="navbar navbar-default navbar-fixed-top">
       <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
-      <a href="overview.html"><img src="assets/images/logo.png" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
+      <a href="../overview.html"><img src="../assets/images/logo.png" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
     </header>
     <div id="wrapper">
       <!-- Sidebar -->
       <aside id="sidebar-wrapper">
         <ul class="sidebar-nav">
           <li class="sidebar-item">
-            <a href="overview.html" class="project-nav-item overview-nav"><i class="fa fa-dashboard"></i>Overview</a>
+            <a href="../overview.html" class="project-nav-item overview-nav"><i class="fa fa-dashboard"></i>Overview</a>
           </li>
           <li class="sidebar-item">
-            <a href="code_index.html" class="project-nav-item code-index-nav"><i class="fa fa-code"></i>Code</a>
+            <a href="../code_index.html" class="project-nav-item code-index-nav"><i class="fa fa-code"></i>Code</a>
           </li>
           <li class="sidebar-item">
-            <a href="smells_index.html" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
+            <a href="../smells_index.html" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
           </li>
         </ul>
       </aside>
@@ -44,12 +44,12 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2018-07-29 06:22:44 +1000'>2018-07-29 06:22:44 +1000</time>
+          Never committed
         
       </span>
     </div>
     <div>
-      <h3><small>. /</small> seek.rb</h3>
+      <h3><small>_site /</small> seek.rb</h3>
     </div>
   </div>
   <!--End Page Title -->
@@ -65,12 +65,12 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">170</span><small> lines of codes</small></div>
+              <div><span class="metric">163</span><small> lines of codes</small></div>
               <div><span class="metric">2</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">8.5</span><small> complexity/method</small></div>
-              <div><span class="metric">14</span><small> churn</small></div>
+              <div><span class="metric">0</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">17.05</span><small> complexity</small></div>
@@ -105,7 +105,7 @@ require &#39;paint&#39;
 
 VERSION = &#39;1.0.0&#39;.freeze
 
-def wtype(worktype)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L12" class="js-smell-location">0</a>                  <a href="seek.html#L12" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>wtype has approx 9 statements</span>          </div>  </li></ol>
+def wtype(worktype)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="seek.html#L12" class="js-smell-location">0</a>                  <a href="../seek.html#L12" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md" target="_blank"><b>TooManyStatements</b></a>        </span>      </div>      <span>wtype has approx 9 statements</span>          </div>  </li></ol>
   case worktype<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Control-Parameter.md" target="_blank"><b>ControlParameter</b></a>        </span>      </div>      <span>wtype is controlled by argument 'worktype'</span>          </div>  </li></ol>
   when &#39;full&#39;
     242
@@ -128,7 +128,7 @@ def wtype(worktype)<ol class="nocode errors smells">  <li>    <div class="descri
   end
 end
 
-def enwtype(i)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L35" class="js-smell-location">0</a>                  <a href="seek.html#L35" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Parameter-Name.md" target="_blank"><b>UncommunicativeParameterName</b></a>        </span>      </div>      <span>enwtype has the parameter name 'i'</span>          </div>  </li></ol>
+def enwtype(i)<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="seek.html#L35" class="js-smell-location">0</a>                  <a href="../seek.html#L35" class="js-smell-location">1</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Parameter-Name.md" target="_blank"><b>UncommunicativeParameterName</b></a>        </span>      </div>      <span>enwtype has the parameter name 'i'</span>          </div>  </li></ol>
   case i<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Control-Parameter.md" target="_blank"><b>ControlParameter</b></a>        </span>      </div>      <span>enwtype is controlled by argument 'i'</span>          </div>  </li></ol>
   when 242
     &#39;full&#39;
@@ -146,7 +146,7 @@ end
 # implement commandline options
 options = {:keyword =&gt; nil, :location =&gt; nil, :daterange =&gt; nil, :worktype =&gt; nil}
 
-parser = OptionParser.new do |opts|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L53" class="js-smell-location">0</a>                  <a href="seek.html#L53" class="js-smell-location">1</a>                  </div>  </li></ol>
+parser = OptionParser.new do |opts|<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="seek.html#L53" class="js-smell-location">0</a>                  <a href="../seek.html#L53" class="js-smell-location">1</a>                  </div>  </li></ol>
   opts.banner = &quot;Usage: #{Paint[&#39;seek.rb [options]&#39;, :red, :white]}&quot;
 
   opts.on(&#39;-k&#39;, &#39;--keyword keyword&#39;, &#39;Keywords to search
@@ -209,36 +209,29 @@ end
 agent = Mechanize.new
 agent.user_agent_alias = &#39;Windows Chrome&#39;
 site = &#39;https://www.seek.com.au&#39;
-page = agent.get(site + &#39;/jobs&#39;, [[&#39;keywords&#39;, options[:keyword]],<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L116" class="js-smell-location">0</a>                  <a href="seek.html#L116" class="js-smell-location">1</a>                  </div>  </li></ol>
+page = agent.get(site + &#39;/jobs&#39;, [[&#39;keywords&#39;, options[:keyword]],<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="seek.html#L116" class="js-smell-location">0</a>                  <a href="../seek.html#L116" class="js-smell-location">1</a>                  </div>  </li></ol>
                                   [&#39;where&#39;, options[:location]],
                                   [&#39;daterange&#39;, options[:daterange]],
                                   [&#39;worktype&#39;, options[:worktype]]])
 results = []
-results &lt;&lt; [&#39;Title&#39;, &#39;URL&#39;, &#39;Advertiser&#39;, &#39;Location&#39;, &#39;Area&#39;, &#39;Listing Date&#39;, &#39;Classification&#39;,
-            &#39;Sub Classification&#39;, &#39;Work Type&#39;, &#39;Short Description&#39;]
+results &lt;&lt; [&#39;Title&#39;, &#39;URL&#39;, &#39;Advertiser&#39;, &#39;Location&#39;, &#39;Area&#39;, &#39;Listing Date&#39;, &#39;Short Description&#39;]
 
 loop do
   # for each page # html = page.body
   jobs = page.search(&#39;article&#39;)
   jobs.each do |job|
-    title = job.xpath(&#39;@aria-label&#39;)
+    title = job.xpath(&quot;descendant::a[@data-automation=&#39;jobTitle&#39;]/text()&quot;)
     url = site + job.xpath(&quot;descendant::a[@data-automation=&#39;jobTitle&#39;]/@href&quot;).to_s
     advertiser = job.xpath(&quot;descendant::a[@data-automation=&#39;jobCompany&#39;]/text()&quot;)
     location = job.xpath(&quot;descendant::a[@data-automation=&#39;jobLocation&#39;]/text()&quot;)
     area = job.xpath(&quot;descendant::a[@data-automation=&#39;jobArea&#39;]/text()&quot;)
     listing_date = job.xpath(&quot;descendant::span[@data-automation=&#39;jobListingDate&#39;]/text()&quot;)
-    classification = job.xpath(&quot;descendant::a[@data-automation=&#39;jobClassification&#39;]/text()&quot;)
-    sub_classification = job.xpath(&quot;descendant::a[@data-automation=&#39;jobSubClassification&#39;]/text()&quot;)
     short_description = job.xpath(&quot;descendant::span[@data-automation=&#39;jobShortDescription&#39;]//text()&quot;)
 
-    # get details from job ad page
-    ad = agent.get(url)
-    # at selects the first using CSS selectors
-    work_type = ad.at(&#39;dd[data-automation=&quot;job-detail-work-type&quot;]&#39;).text
-    listing_date = ad.at(&#39;dd[data-automation=&quot;job-detail-date&quot;]&#39;).text if listing_date.empty?
+    # get full job description from job ad page
+    # job_description = agent.get(url).xpath(&quot;//descendant::div[@data-automation=&#39;jobDescription&#39;]//text()&quot;)
 
-    results &lt;&lt; [title, url, advertiser, location, area, listing_date,
-                classification, sub_classification, work_type, short_description]
+    results &lt;&lt; [title, url, advertiser, location, area, listing_date, short_description]
   end
 
   if link = page.link_with(:text =&gt; &#39;Next&#39;) # As long as there is still a next page link
@@ -248,7 +241,7 @@ loop do
   end
 end
 
-if results.size &gt; 1<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="_site/seek.html#L148" class="js-smell-location">0</a>                  <a href="seek.html#L155" class="js-smell-location">1</a>                  </div>  </li></ol>
+if results.size &gt; 1<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden"true"=""></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Identical code found in 2 nodes</span>              <span>Locations:</span>                  <a href="seek.html#L148" class="js-smell-location">0</a>                  <a href="../seek.html#L155" class="js-smell-location">1</a>                  </div>  </li></ol>
   keyword = options[:keyword].tr(&#39; &#39;, &#39;-&#39;)
   location = options[:location].tr(&#39; &#39;, &#39;-&#39;) unless options[:location].empty?
   daterange = &#39;daterange-&#39; + options[:daterange] unless options[:daterange].empty?
@@ -273,14 +266,14 @@ end
     </div>
 
     <!-- Javascripts -->
-    <script src='assets/javascripts/jquery.min.js'></script>
-    <script src='assets/javascripts/jquery.tablesorter.min.js'></script>
-    <script src='assets/javascripts/jquery.scrollTo.min.js'></script>
-    <script src='assets/javascripts/jquery.timeago.js'></script>
-    <script src='assets/javascripts/highcharts.src-4.0.1.js'></script>
-    <script src='assets/javascripts/prettify.js'></script>
-    <script src='assets/javascripts/bootstrap.min.js'></script>
-    <script src='assets/javascripts/application.js'></script>
-    <script src='assets/javascripts/jquery.filtertable.min.js'></script>
+    <script src='../assets/javascripts/jquery.min.js'></script>
+    <script src='../assets/javascripts/jquery.tablesorter.min.js'></script>
+    <script src='../assets/javascripts/jquery.scrollTo.min.js'></script>
+    <script src='../assets/javascripts/jquery.timeago.js'></script>
+    <script src='../assets/javascripts/highcharts.src-4.0.1.js'></script>
+    <script src='../assets/javascripts/prettify.js'></script>
+    <script src='../assets/javascripts/bootstrap.min.js'></script>
+    <script src='../assets/javascripts/application.js'></script>
+    <script src='../assets/javascripts/jquery.filtertable.min.js'></script>
   </body>
 </html>

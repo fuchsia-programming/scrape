@@ -118,24 +118,31 @@ page = agent.get(site + '/jobs', [['keywords', options[:keyword]],
                                   ['daterange', options[:daterange]],
                                   ['worktype', options[:worktype]]])
 results = []
-results << ['Title', 'URL', 'Advertiser', 'Location', 'Area', 'Listing Date', 'Short Description']
+results << ['Title', 'URL', 'Advertiser', 'Location', 'Area', 'Listing Date', 'Classification',
+            'Sub Classification', 'Work Type', 'Short Description']
 
 loop do
   # for each page # html = page.body
   jobs = page.search('article')
   jobs.each do |job|
-    title = job.xpath("descendant::a[@data-automation='jobTitle']/text()")
+    title = job.xpath('@aria-label')
     url = site + job.xpath("descendant::a[@data-automation='jobTitle']/@href").to_s
     advertiser = job.xpath("descendant::a[@data-automation='jobCompany']/text()")
     location = job.xpath("descendant::a[@data-automation='jobLocation']/text()")
     area = job.xpath("descendant::a[@data-automation='jobArea']/text()")
     listing_date = job.xpath("descendant::span[@data-automation='jobListingDate']/text()")
+    classification = job.xpath("descendant::a[@data-automation='jobClassification']/text()")
+    sub_classification = job.xpath("descendant::a[@data-automation='jobSubClassification']/text()")
     short_description = job.xpath("descendant::span[@data-automation='jobShortDescription']//text()")
 
-    # get full job description from job ad page
-    # job_description = agent.get(url).xpath("//descendant::div[@data-automation='jobDescription']//text()")
+    # get details from job ad page
+    ad = agent.get(url)
+    # at selects the first using CSS selectors
+    work_type = ad.at('dd[data-automation="job-detail-work-type"]').text
+    listing_date = ad.at('dd[data-automation="job-detail-date"]').text if listing_date.empty?
 
-    results << [title, url, advertiser, location, area, listing_date, short_description]
+    results << [title, url, advertiser, location, area, listing_date,
+                classification, sub_classification, work_type, short_description]
   end
 
   if link = page.link_with(:text => 'Next') # As long as there is still a next page link
