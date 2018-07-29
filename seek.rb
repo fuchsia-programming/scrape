@@ -126,14 +126,14 @@ loop do
   jobs = page.search('article')
   jobs.each do |job|
     title = job.xpath('@aria-label')
-    url = site + job.xpath("descendant::a[@data-automation='jobTitle']/@href").to_s
-    advertiser = job.xpath("descendant::a[@data-automation='jobCompany']/text()")
-    location = job.xpath("descendant::a[@data-automation='jobLocation']/text()")
-    area = job.xpath("descendant::a[@data-automation='jobArea']/text()")
-    listing_date = job.xpath("descendant::span[@data-automation='jobListingDate']/text()")
-    classification = job.xpath("descendant::a[@data-automation='jobClassification']/text()")
-    sub_classification = job.xpath("descendant::a[@data-automation='jobSubClassification']/text()")
-    short_description = job.xpath("descendant::span[@data-automation='jobShortDescription']//text()")
+    url = site + job.xpath('descendant::a[@data-automation="jobTitle"]/@href').to_s
+    advertiser = job.xpath('descendant::a[@data-automation="jobCompany"]/text()')
+    location = job.xpath('descendant::a[@data-automation="jobLocation"]/text()')
+    area = job.xpath('descendant::a[@data-automation="jobArea"]/text()')
+    listing_date = job.xpath('descendant::span[@data-automation="jobListingDate"]/text()')
+    classification = job.xpath('descendant::a[@data-automation="jobClassification"]/text()')
+    sub_classification = job.xpath('descendant::a[@data-automation="jobSubClassification"]/text()')
+    short_description = job.xpath('descendant::span[@data-automation="jobShortDescription"]//text()')
 
     # get details from job ad page
     ad = agent.get(url)
@@ -145,7 +145,7 @@ loop do
                 classification, sub_classification, work_type, short_description]
   end
 
-  if link = page.link_with(:text => 'Next') # As long as there is still a next page link
+  if (link = page.link_with(:text => 'Next')) # As long as there is still a next page link
     page = link.click
   else # If no link left, then break out of loop
     break
