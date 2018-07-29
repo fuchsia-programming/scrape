@@ -118,8 +118,8 @@ page = agent.get(site + '/jobs', [['keywords', options[:keyword]],
                                   ['daterange', options[:daterange]],
                                   ['worktype', options[:worktype]]])
 results = []
-results << ['Title', 'URL', 'Advertiser', 'Location', 'Area', 'Listing Date', 'Classification',
-            'Sub Classification', 'Work Type', 'Short Description']
+results << ['Title', 'URL', 'Advertiser', 'Location', 'Area', 'Listing Date', 'Salary',
+            'Classification', 'Sub Classification', 'Work Type', 'Short Description']
 
 loop do
   # for each page # html = page.body
@@ -131,6 +131,7 @@ loop do
     location = job.xpath('descendant::a[@data-automation="jobLocation"]/text()')
     area = job.xpath('descendant::a[@data-automation="jobArea"]/text()')
     listing_date = job.xpath('descendant::span[@data-automation="jobListingDate"]/text()')
+    salary = job.xpath('descendant::span[@data-automation="jobSalary"]/span/text()')
     classification = job.xpath('descendant::a[@data-automation="jobClassification"]/text()')
     sub_classification = job.xpath('descendant::a[@data-automation="jobSubClassification"]/text()')
     short_description = job.xpath('descendant::span[@data-automation="jobShortDescription"]//text()')
@@ -141,7 +142,7 @@ loop do
     work_type = ad.at('dd[data-automation="job-detail-work-type"]').text
     listing_date = ad.at('dd[data-automation="job-detail-date"]').text if listing_date.empty?
 
-    results << [title, url, advertiser, location, area, listing_date,
+    results << [title, url, advertiser, location, area, listing_date, salary,
                 classification, sub_classification, work_type, short_description]
   end
 
