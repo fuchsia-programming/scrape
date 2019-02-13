@@ -4,7 +4,7 @@
 
 ## **When you need those jobs hypersonic...._scrape_**
 
-**_scrape_** is a command line script that builds :wrench::nut_and_bolt::hammer: 
+**_scrape_** is a command line script that builds 🔧 🔩 🔨  
 CSV results of job searches. Check out the [jobs](
 https://github.com/jbampton/scrape/tree/master/jobs)
 folder for some recent **_scrape_**_s_. 
