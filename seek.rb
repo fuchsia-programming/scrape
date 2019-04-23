@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Wow, looks like there are still jobs for Cobol
+# Wow, looks like there are still jobs for COBOL
 
 require 'csv'
 require 'mechanize'

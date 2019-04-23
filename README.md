@@ -6,7 +6,7 @@
 
 **_scrape_** is a command line script that builds 🔧 🔩 🔨  
 CSV results of job searches. Check out the [jobs](
-https://github.com/jbampton/scrape/tree/master/jobs)
+https://github.com/fuchsia-programming/scrape/tree/master/jobs)
 folder for some recent **_scrape_**_s_. 
 
 **_scrape_** is built with:
@@ -34,7 +34,7 @@ folder for some recent **_scrape_**_s_.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics)
 
-Hey Wow :) looks like there are still [jobs](https://github.com/jbampton/scrape/blob/master/jobs/cobol-worktype-all.csv) for [Cobol](
+Hey Wow :) looks like there are still [jobs](https://github.com/fuchsia-programming/scrape/blob/master/jobs/cobol-worktype-all.csv) for [COBOL](
 https://en.wikipedia.org/wiki/COBOL)
 
 ## Seek 
@@ -73,9 +73,9 @@ Work type: full
 ```
 
 Code overview of [seek.rb](
-https://github.com/jbampton/scrape/blob/master/seek.rb) 
+https://github.com/fuchsia-programming/scrape/blob/master/seek.rb) 
 can be seen on the [RubyCritic page](
-http://thebeast.me/scrape/rubycritic/overview.html).
+https://fuchsia-programming.github.io/scrape/rubycritic/overview.html).
 
 
 ## Tools
