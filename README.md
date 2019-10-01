@@ -1,5 +1,6 @@
 # **_scrape_**
 
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=fuchsia-programming/scrape)](https://dependabot.com)
 ![GitHub last commit](https://img.shields.io/github/last-commit/fuchsia-programming/scrape)
 ![GitHub repo size](https://img.shields.io/github/repo-size/fuchsia-programming/scrape)
 ![GitHub language count](https://img.shields.io/github/languages/count/fuchsia-programming/scrape)
