@@ -1,4 +1,9 @@
 # **_scrape_**
+
+![GitHub last commit](https://img.shields.io/github/last-commit/fuchsia-programming/scrape)
+![GitHub repo size](https://img.shields.io/github/repo-size/fuchsia-programming/scrape)
+![GitHub language count](https://img.shields.io/github/languages/count/fuchsia-programming/scrape)
+![GitHub top language](https://img.shields.io/github/languages/top/fuchsia-programming/scrape)
    
 <img src="assets/images/logo.png" align="right">
 
